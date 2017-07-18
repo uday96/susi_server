@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "susi-server-uday",
+  "private_key_id": "e8738ca664c83ec796b5edba49945f5ce9b1c801",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCzP/Zt4ejAHp2F\nw+7ZOeUgp9ZE17hHCvkgPlhxPE3qcF81qRckeXIP7+6XXSK+iYI9VOOzMTcDtZ/m\nZtsP1JrzmPHx6T7thn5z0H4zAwv9L0ZnLYDIwCQd14AuqcSc4+YKodsMEydNu8mx\nTHsizMzSe0e5fUoXd66/hCBi2JJJvGLEga7/ZunTuLbTmilKdNNQ0nLxoNhdono/\nToacuorrd2waKg9JKRT9yGNZig+MkbpIY3FkpMGn39Dea7iY4PXupcmx8dgnsUSF\n8/feuguSakN4CxYSYwfLAT3e6JtIgr+5Wy0i8iIVkKHmnQXv6Kv9AUi0SKw/rrxD\n4LJBSzfvAgMBAAECggEAAdA41v29FAx7PXow9WOfjMgF4+Zmx9k1kfzveh3JEAEZ\nBXrzb/wGimC8Ai4ABvtvJN2x/AMYcmIo/vS1bKCS/LnkYLUiXNbKerN2Q1/ZhDMx\nPCP6tI01EFQ4yMAQ7CFmF19xztp2wFORA8kpSb3WqJ50qEy7LieYzfkxNq7INBS+\nat78tvlcs3DEG+vwCkRjPcNa0sGNmOYZFPBR5Be7v0y6pMW4/LZzKvgsurJCvcxS\nazcByzt/CDxYKP8pwvZylBuCLIbSiQE9UoIspESk8EXsPXJypE9kwyLbgD5hjHx5\nUmCHIz4md6cNtGeKWpDCYCsHGdQdeEWtToocUoLtiQKBgQD76l4NdLVtPmApQFq7\nd+1HuAeGCCWJFb4AtPaCz95AC6lvE/KGPehEJ6wjLYQBadglJ7B8WjyANAM4uSjX\ntUKZSIE0XD3mU9UVPrmKOewai6yxtEfLhyr8BFEZmj9uZmdRBUABtfmoA6eGF0MR\nC885T4JIJNNrwzng2QFdciIlLQKBgQC2J/rcojeY2Ly7pP3NgIGOoKvPI0FBNLQ3\nf8NsR8r6jDfO4cem/lekqAeELfVIaufVZzH9DornltqCxuwYDmXHZBUHnSMf187u\nHuEs/YCjD6zElxfRZPqf19MIbaKw/SCGs2RVmgkxKzGP2zoAbw9udVo3cgd6QVKn\nl+M+8jN7CwKBgA8JhmO3O70xo/vSY5gdKITHb2uIwPTV32mbY7ubPOEF0S9YOXnZ\n6CtpUtUmumJ7NvPA0sAZgtMER8zzAIUfxMHxmgTOHMPK7UU/YUPnATj0bXKOGFsF\nzoMMnuqwUmj8o94qOg/gFO76iN1wNgimc9Av9s7no9ci6CmLypERZwhhAoGADznM\nSEDu8MG9FNo3tMO3EJrxgYDq5W5oWfM9/IELwGGUEKDitVyxKrw41J2a0RDOjBHy\nJbrfdXgwj5ndBi296Cq/b0F9PB4n19OQ8tfFttuKj2wpu4D7Sf0aUKwJW03tOBUq\nn9UeS5PWsrWaZYri+VKp1dScN2XaaNPTVOGd1/0CgYEA+NE/F8TuB+xhL7WB8lkW\n+4VCLW/9DZtJdp240oZr25ch2lFxwyVS67CVZB4HRelSWkjZOk1L0GBIdr8RAqN8\nkmzwi15m32BTKTdZyOixkk7w0ppsaDQ2IwK900UDQpX5XaAPdv4pluEVdAtFXGwc\ncuttDOwM4tmQga+AIdraOik=\n-----END PRIVATE KEY-----\n",
+  "client_email": "continuous-integration-test@susi-server-uday.iam.gserviceaccount.com",
+  "client_id": "100293190917653953205",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/continuous-integration-test%40susi-server-uday.iam.gserviceaccount.com"
+}
