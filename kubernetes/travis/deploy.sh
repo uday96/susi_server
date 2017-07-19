@@ -21,14 +21,14 @@ gcloud components install kubectl
 gcloud config set compute/zone us-central1-b
 
 # Decrypt the credentials we added to the repo using the key we added with the Travis command line tool
-#openssl aes-256-cbc -K $encrypted_27e15b7757b4_key -iv $encrypted_27e15b7757b4_iv -in ./kubernetes/travis/eventyay-8245fde7ab8a.json.enc -out eventyay-8245fde7ab8a.json -d
+openssl aes-256-cbc -K $encrypted_28cda4aad5d7_key -iv $encrypted_28cda4aad5d7_iv -in susi-server-gcloud-creds.json.enc -out susi-server-gcloud-creds.json -d
 
-gcloud auth activate-service-account --key-file susi-server-uday-e8738ca664c8.json
-export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/susi-server-uday-e8738ca664c8.json
+gcloud auth activate-service-account --key-file susi-server-gcloud-creds.json
+export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/susi-server-gcloud-creds.json
 gcloud config set project susi-server-uday
 gcloud container clusters get-credentials susi-server-cluster
 
-cd kubernetes
+cd kubernetes/images
 
 docker build --no-cache -t chiragw15/susi_server:$TRAVIS_COMMIT .
 docker login -u="chiragw15" -p="Chirag@1234"
