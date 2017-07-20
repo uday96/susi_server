@@ -2,8 +2,6 @@ FROM ubuntu:latest
 MAINTAINER Ansgar Schmidt <ansgar.schmidt@gmx.net>
 ENV DEBIAN_FRONTEND noninteractive
 
-ARG BRANCH
-
 # update
 RUN apt-get update
 RUN apt-get upgrade -y
@@ -12,11 +10,10 @@ RUN apt-get upgrade -y
 RUN apt-get install -y git openjdk-8-jdk
 
 # clone the github repo
-RUN git clone https://github.com/uday96/susi_server.git
+RUN git clone https://github.com/chiragw15/susi_server.git
 WORKDIR susi_server
 RUN git submodule update --recursive --remote
 RUN git submodule update --init --recursive
-RUN git checkout $BRANCH
 
 # compile
 RUN ./gradlew build -x test
