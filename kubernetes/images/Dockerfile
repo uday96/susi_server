@@ -2,6 +2,10 @@ FROM ubuntu:latest
 MAINTAINER Ansgar Schmidt <ansgar.schmidt@gmx.net>
 ENV DEBIAN_FRONTEND noninteractive
 
+ARG BRANCH
+
+echo $BRANCH
+
 # update
 RUN apt-get update
 RUN apt-get upgrade -y
@@ -14,6 +18,7 @@ RUN git clone https://github.com/uday96/susi_server.git
 WORKDIR susi_server
 RUN git submodule update --recursive --remote
 RUN git submodule update --init --recursive
+git checkout $BRANCH
 
 # compile
 RUN ./gradlew build -x test

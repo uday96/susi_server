@@ -2,10 +2,10 @@
 
 export DEPLOY_BRANCH=${DEPLOY_BRANCH:-development}
 
-# if [ "$TRAVIS_REPO_SLUG" != "uday96/susi_server" -o  "$TRAVIS_BRANCH" != "$DEPLOY_BRANCH" ]; then
-#     echo "Skip production deployment for a very good reason."
-#     exit 0
-# fi
+if [ "$TRAVIS_REPO_SLUG" != "uday96/susi_server" -o  "$TRAVIS_BRANCH" != "$DEPLOY_BRANCH" ]; then
+    echo "Skip production deployment for a very good reason."
+    exit 0
+fi
 
 export REPOSITORY="https://github.com/${TRAVIS_REPO_SLUG}.git"
 
@@ -30,8 +30,7 @@ gcloud container clusters get-credentials susi-server-cluster
 
 cd kubernetes/images
 
-docker build --no-cache -t chiragw15/susi_server:$TRAVIS_COMMIT .
-#docker login -u="chiragw15" -p="Chirag@1234"
+docker build -build-arg BRANCH=$DEPLOY_BRANCH --no-cache -t chiragw15/susi_server:$TRAVIS_COMMIT .
 docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 docker tag chiragw15/susi_server:$TRAVIS_COMMIT chiragw15/susi_server:latest
 docker push chiragw15/susi_server
