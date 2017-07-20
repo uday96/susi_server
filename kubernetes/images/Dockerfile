@@ -4,8 +4,6 @@ ENV DEBIAN_FRONTEND noninteractive
 
 ARG BRANCH
 
-echo $BRANCH
-
 # update
 RUN apt-get update
 RUN apt-get upgrade -y
