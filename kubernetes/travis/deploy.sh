@@ -29,8 +29,8 @@ gcloud config set project susi-server-uday
 gcloud container clusters get-credentials susi-server-cluster
 
 cd kubernetes/images
-
-docker build -build-arg BRANCH=$DEPLOY_BRANCH --no-cache -t chiragw15/susi_server:$TRAVIS_COMMIT .
+echo $DEPLOY_BRANCH
+docker build --build-arg BRANCH=$DEPLOY_BRANCH --no-cache -t chiragw15/susi_server:$TRAVIS_COMMIT .
 docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 docker tag chiragw15/susi_server:$TRAVIS_COMMIT chiragw15/susi_server:latest
 docker push chiragw15/susi_server
