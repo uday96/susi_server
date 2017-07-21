@@ -35,4 +35,4 @@ docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 docker tag chiragw15/susi_server:$TRAVIS_COMMIT chiragw15/susi_server:latest
 docker push chiragw15/susi_server
 
-kubectl set image deployment/susi-server --namespace=default susi-server=chiragw15/susi_server:$TRAVIS_COMMIT
+kubectl set image deployment/susi-server --namespace=web susi-server=chiragw15/susi_server:$TRAVIS_COMMIT
