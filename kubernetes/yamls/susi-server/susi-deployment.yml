@@ -20,7 +20,7 @@ spec:
       - image: chiragw15/susi_server:latest
         name: susi-server
         volumeMounts:
-          - mountPath: /data/
+          - mountPath: /data
             name: accounts-data-disk
         livenessProbe:
           httpGet:
