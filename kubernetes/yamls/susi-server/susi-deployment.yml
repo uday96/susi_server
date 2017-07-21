@@ -1,8 +1,8 @@
 #
 # Deployment of the SUSI Server
 #
-kind: Deployment
 apiVersion: apps/v1beta1
+kind: Deployment
 metadata:
   name: susi-server
   namespace: web
@@ -13,15 +13,14 @@ spec:
       labels:
         app: susi-server
     spec:
-      volumes:
-      - name: data-store
-        emptyDir: {}
+      nodeSelector:
+        server: primary
       containers:
-      - image: chiragw15/susi_server:latest
-        name: susi-server
+      - name: susi-server
+        image: chiragw15/susi_server:latest
         volumeMounts:
-          - mountPath: /data
-            name: accounts-data-disk
+          - mountPath: /susi_server/data
+            name: server-data
         livenessProbe:
           httpGet:
             path: /susi/status.json
@@ -32,8 +31,6 @@ spec:
         - containerPort: 80
           protocol: TCP
       volumes:
-      - name: accounts-data-disk
-        gcePersistentDisk:
-          pdName: accounts-data-disk
-          fsType: ext4
-      restartPolicy: Always
+      - name: server-data
+        persistentVolumeClaim:
+          claimName: server-data-claim

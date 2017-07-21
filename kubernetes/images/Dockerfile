@@ -13,7 +13,10 @@ RUN apt-get install -y git openjdk-8-jdk
 
 # clone the github repo
 RUN git clone https://github.com/uday96/susi_server.git
-WORKDIR susi_server
+
+# set current working directory to susi_server
+WORKDIR /susi_server
+
 RUN git submodule update --recursive --remote
 RUN git submodule update --init --recursive
 RUN git checkout $BRANCH
@@ -29,11 +32,11 @@ RUN sed -i.bak 's/^\(port.http=\).*/\180/'                conf/config.properties
 RUN sed -i.bak 's/^\(port.https=\).*/\1443/'              conf/config.properties
 RUN sed -i.bak 's/^\(upgradeInterval=\).*/\186400000000/' conf/config.properties
 
-# hack until loklak support no-daemon
+# hack until susi support no-daemon
 RUN echo "while true; do sleep 10;done" >> bin/start.sh
 
 # Create Volume for persistence
-VOLUME ["data/"]
+VOLUME ["/susi_server/data"]
 
-# start loklak
-CMD ["bin/start.sh", "-Idn"]
+# start susi
+CMD ["/susi_server/bin/start.sh", "-Idn"]

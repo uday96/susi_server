@@ -1,5 +1,5 @@
 #
-# API Server service which will expose the API Server to the rest of the cluster
+# SUSI Server service which will expose the SUSI Server to the rest of the cluster
 #
 kind: Service
 apiVersion: v1
