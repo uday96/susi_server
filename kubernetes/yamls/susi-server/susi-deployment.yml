@@ -19,6 +19,15 @@ spec:
       containers:
       - image: chiragw15/susi_server:latest
         name: susi-server
+        volumeMounts:
+          - mountPath: /data/
+            name: accounts-data-disk
+        livenessProbe:
+          httpGet:
+            path: /susi/status.json
+            port: 80
+          initialDelaySeconds: 30
+          timeoutSeconds: 3
         ports:
         - containerPort: 80
           protocol: TCP
