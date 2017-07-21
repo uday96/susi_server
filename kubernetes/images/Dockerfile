@@ -15,7 +15,7 @@ RUN apt-get install -y git openjdk-8-jdk
 RUN git clone https://github.com/uday96/susi_server.git
 
 # set current working directory to susi_server
-WORKDIR susi_server
+WORKDIR /susi_server
 
 RUN git submodule update --recursive --remote
 RUN git submodule update --init --recursive
@@ -36,7 +36,7 @@ RUN sed -i.bak 's/^\(upgradeInterval=\).*/\186400000000/' conf/config.properties
 RUN echo "while true; do sleep 10;done" >> bin/start.sh
 
 # Create Volume for persistence
-VOLUME ["data/"]
+VOLUME ["/susi_server/data"]
 
 # start susi
-CMD ["bin/start.sh", "-Idn"]
+CMD ["/susi_server/bin/start.sh", "-Idn"]
