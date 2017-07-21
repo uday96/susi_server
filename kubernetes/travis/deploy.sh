@@ -26,7 +26,7 @@ openssl aes-256-cbc -K $encrypted_f89d3d898b0d_key -iv $encrypted_f89d3d898b0d_i
 
 gcloud auth activate-service-account --key-file susi-server-gcloud-creds.json
 export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/susi-server-gcloud-creds.json
-gcloud config set project susi-server-uday
+gcloud config set project susi-auto-deploy
 gcloud container clusters get-credentials susi-server-cluster
 
 cd kubernetes/images
